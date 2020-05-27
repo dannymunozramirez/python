@@ -1,0 +1,98 @@
+{% extends "layout.html" %}
+
+        {% block title %} 
+        Service
+        {% endblock %}
+
+    {% block body %}
+
+    <section id="banner">
+
+        <h1>Estimate your project</h1>
+
+    </section>
+
+
+    <section style="text-align: center;" id="special">
+        <h2>Montly energy usage</h2>
+        <h6>In this section we need to know, how much is your kwh usage, this info could be 
+            an average.
+        </h6>
+        <br>
+
+        <span id="estimate">
+            <form action="{{ url_for('service') }}" name = "estimation" onsubmit="return validateEstimation();" method="POST">
+                <div style="text-align: center;"><input type="number" min="1" max="" name="bill" placeholder="Please enter you montly bill usage...">
+
+                    <h2>Solar coverage</h2>
+                    <h6>In this section we need to know, how much of your bill, do you want 
+                        to cover with solar energy.
+                    </h6>
+                    <br> 
+                <input type="number" min="1" max="100"  name="cover" placeholder="Please enter number...">
+               
+                <div class="container">          
+                    <button id="button-est" type="submit" class="btn btn-info btn-block">Estimate</button>
+                </div>
+            </div>
+            </form>
+        </span>
+
+    </section>
+
+    <section id="special">
+        <h2>For your Solar Project you will need:  </h2>
+        <h2>{{ estimation }} <p> Solar panels.</p>
+        </h2>
+        <br>
+        <br>
+        <h2>and you will save:  </h2>
+        
+
+        {% if  estimation > 1 %}
+            <section id="special">
+                <div class="container-after">
+                    <h2>Table</h2>
+                    <p>The .table class adds basic styling (light padding and only horizontal dividers) to a table:</p>            
+                    <table class="table">
+                        <thead>
+                            <tr>
+                            <th>Year</th>
+                            <th>KW (Year)</th>
+                            <th>Saved (USD)</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                            <td>1</td>
+                            <td>{{ panelMonth * 12 * estimation }} </td>
+                            <td>{{ panelMonth * price * 12 * estimation}}  </td>
+                            </tr>
+                            <tr>
+                            <td>5</td>
+                            <td>{{ panelMonth * 60 * estimation}}</td>
+                            <td>{{ panelMonth * price * 60 * estimation}}</td>
+                            </tr>
+                            <tr>
+                            <td>10</td>
+                            <td>{{ panelMonth * 120 * estimation}}</td>
+                            <td>{{ panelMonth * price * 120 * estimation}}</td>
+                            </tr>
+                        </tbody>
+                        </table>
+                </div>
+            </section>
+
+            <section class="small-esti" id="special">
+                <h2>{{ panelMonth * price * 12 * estimation }}, dollars per Year.</h2>
+            </section>
+        {% endif %}
+
+        
+    </section>
+
+    
+
+    
+
+    {% endblock%}

@@ -1,0 +1,111 @@
+{% extends "layout.html" %}
+
+
+
+    {% block title %} 
+    Home
+    {% endblock %}
+
+    
+
+    {% block body %}
+
+    
+    
+      <section id="banner-sun">
+        <div  class="row">
+          <img class="small" src="/static/img/solar1.jpg" alt="">
+            <div class="column">  
+              <h1>Solar Energy</h1>
+              <p><strong> Solar energy is radiant light and heat from the Sun that is harnessed 
+              using a range of ever-evolving technologies such as solar heating, photovoltaics, 
+              solar thermal energy, solar architecture, molten salt power plants and artificial photosynthesis.
+              It is an essential source of renewable energy, and its technologies are broadly characterized as either 
+              passive solar or active solar depending on how they capture and distribute solar energy or convert it 
+              into solar power. Active solar techniques include the use of photovoltaic systems, concentrated solar power, 
+              and solar water heating to harness the energy. Passive solar techniques include orienting a building to the Sun, 
+              selecting materials with favorable thermal mass or light-dispersing properties, and designing spaces that naturally 
+              circulate air. <a href="{{ url_for('about')}}">more...</a></strong></p>
+            </div>
+          
+      </section>
+      
+    <div class="spacing"></div>
+
+    <section id="banner-wind">
+      <div class="row">
+        <div class="column" >
+          <h1>Wind Power</h1>
+          Wind power or wind energy is the use of wind to 
+          provide the mechanical power through wind turbines 
+          to turn electric generators and traditionally to do 
+          other work, like milling or pumping. Wind power is 
+          a sustainable and renewable energy, and has a much 
+          smaller impact on the environment compared to burning 
+          fossil fuels.<a href="{{ url_for('about')}}">more...</a></p>
+        </div>   
+        <img class="small" src="/static/wind1.jpg" alt="">
+      </div>
+    </section>
+
+    <div class="spacing"></div>
+
+
+    <section id="banner-tidal">
+      <div class="row">
+        <img class="small" src="/static/img/tidal.jpg" alt="">
+        <div class="column">
+          <h1>Tidal Power</h1>
+          Tidal power or tidal energy is the form 
+          of hydropower that converts the energy 
+          obtained from tides into useful forms of 
+          power, mainly electricity.<a href="{{ url_for('about')}}">more...</a></p>
+        </div>
+          
+              
+      </div>
+    </section>
+
+    <div class="spacing"></div>
+
+    <section id="banner-wind">
+      <div class="row">
+        <div class="column" >
+          <h1>Biomass Energy</h1>
+          Biomass is plant or animal material used 
+          for energy production (electricity or heat), or 
+          in various industrial processes as raw substance 
+          for a range of products. It can be purposely grown 
+          energy crops (e.g. miscanthus, switchgrass), wood or 
+          forest residues, waste from food crops (wheat straw, bagasse), 
+          horticulture (yard waste), food processing (corn cobs), 
+          animal farming (manure, rich in nitrogen and phosphorus), 
+          or human waste from sewage plants. <a href="{{ url_for('about')}}">more...</a></p>
+        </div>   
+        <img class="small" src="/static/img/biomass.jpg" alt="">
+      </div>
+    </section>
+
+    <div class="spacing"></div>
+
+    <section id="banner-geo">
+      <div class="row">
+        <img class="small" src="/static/img/geothermal.jpg" alt="">
+        <div class="column">
+
+          <h1>Goethermal Energy</h1>
+          Geothermal energy is thermal energy generated and 
+          stored in the Earth. Thermal energy is the energy 
+          that determines the temperature of matter. The geothermal
+          energy of the Earth's crust originates from the original 
+          formation of the planet and from radioactive decay of materials 
+          (in currently uncertain[1] but possibly roughly equal proportions).
+          The adjective geothermal originates from the Greek roots 
+          (geo), meaning Earth, and θερμος (thermos), meaning hot
+        <a href="{{ url_for('about')}}">more...</a> </p>
+        </div>
+          
+              
+      </div>
+    </section>
+    {% endblock%}
